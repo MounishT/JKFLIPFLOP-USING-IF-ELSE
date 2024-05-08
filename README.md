@@ -34,15 +34,70 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+step-1 : Go to quartus software.
+
+step-2 : Set new environment.
+
+step-3 : Type the code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+step-4 : Run the program.
+
+step-5 : Give inputs in the waveform table .
+
+step-6 : Run the program.
 
 **PROGRAM**
+## Program for flipflops and verify its truth table in quartus using Verilog programming. 
+```PY
+Developed by: T MOUNISH
+RegisterNumber: 212223230098
+```
+```PY
+module JKFlipflop(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+ //Write logic for JK flipflop using if else statement for four conditions
+
+
+begin
+               if (j == 0 && k == 0)
+                    begin
+                    q <= q;
+                    qb <= qb;
+                    end 
+		else if (j != k)
+                    begin
+                    q <= j;
+                    qb <= k;
+                    end
+               else if (j == 1 && k == 1) 
+                    begin 
+                    q <= ~q; 
+                    qb <= ~qb; 
+                    end 
+            end
+end  
+endmodule
+
 */
-
+```
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/Kesavasai20/JKFLIPFLOP-USING-IF-ELSE/assets/138849303/b74fd181-c418-4c9c-8aa9-1b7e688fab12)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/Kesavasai20/JKFLIPFLOP-USING-IF-ELSE/assets/138849303/e20dcad3-161d-4854-aea3-fbe4d454f9a8)
 
 **RESULTS**
+Implementation of JK flipflop using verilog and validating their functionality using their functional tables is executed and the output is verified successfully.
+
